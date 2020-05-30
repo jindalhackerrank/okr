@@ -12,12 +12,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
-function OKRListItem({ okr = [], parent,index }) {
+function OKRListItem({ okr = [], parent, index }) {
 	const [expanded, setExpanded] = useState(true);
 	return (
 		<div>
 			<ExpansionPanel expanded={expanded} onClick={() => setExpanded(!expanded)}>
-				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} classes="summary">
+				<ExpansionPanelSummary expandIcon={okr.length > 0 ? <ExpandMoreIcon /> : ''} classes="summary">
 					<Typography variant="h6">{`${index}) ${parent.title}`}</Typography>
 				</ExpansionPanelSummary>
 				<ExpansionPanelDetails>
